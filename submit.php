@@ -14,3 +14,13 @@ $nombre = $_POST['Nombre'];
 $email = $_POST['email'];
 $mensaje = $_Post['mensaje'];
 
+$sql = "INSETT INTO formulario_contacto (nombre,email,mensaje) VALUES ("$nombre","$email","$mensaje")";
+
+if($conn->query($sql) === TRUE){
+    echo "ole";
+}else{
+    echo "Error:" . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
